@@ -4,4 +4,4 @@
   [Lab 01 repo](https://github.com/micahThor/java-fundamentals/tree/master/basics)
   
 - ### LAB 02 - JAN 8
-  [Lab 01 repo](https://github.com/micahThor/java-fundamentals/tree/master/basiclibrary)
+  [Lab 02 repo](https://github.com/micahThor/java-fundamentals/tree/master/basiclibrary)
