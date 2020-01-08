@@ -1,14 +1,18 @@
-# LAB 01 - JAN 7
+# LAB 02 - JAN 8
 
 ## Featured TASKS
-- pluralize method
+- roll method
 
-  Takes a String representing animal type and a count as input.  Method returns that String with a 's' character at end if count equals zero or count is greater than one.  Otherwise method returns original String.
+  Takes in an integer value as input for how many times a six-sided dice should be rolled.  With each roll of a dice (random number between 1 and 6 inclusive), add that value to an array.  Returns the array of dice results.
+  
+- containsDuplicates method
+  
+  Takes in an array of integer vales as input.  Iterates over input array to determine if there are any duplicate values existing in array.  Returns true if there are duplicate values, false otherwise.
+ 
+- averageOfArrayValues method
 
-- flipNHeads method
+  Takes in an array of integers as input.  Iterates through array and adds each element value to a running total.  Return the cumulative total divided by the length of the array to obtain average.
+  
+- arrayOfLowestAvgArrayofArrays method
 
-  Takes an integer representing the number of requested successive coin fips resulting in 'heads'.  Method prints out heads/tails results to console until input number is reached.
-
-- clock method
-
-  Method prints time in HH:MM:SS format to console for every passing second.  User must manually exit method in console to terminate method.
+  Takes in a 2d array of integers as input.  Iterates through the 2d array and gets the average of each sub-array.  The sub-array with the lowest average is returned.
