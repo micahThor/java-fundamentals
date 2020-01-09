@@ -16,3 +16,15 @@
 - arrayOfLowestAvgArrayofArrays method
 
   Takes in a 2d array of integers as input.  Iterates through the 2d array and gets the average of each sub-array.  The sub-array with the lowest average is returned.
+
+# LAB 03 - JAN 9
+
+## Featured TASKS
+
+- weatherDataToString method
+  
+  Takes in a 2d list representing temperatures spanning over a month.  Method determines and returns a String featuring the minimum and maximum temperatures for a time period as well as all the temperatures not experienced during that period.
+  
+-- tally method
+  
+  Takes in a list of Strings representing a name that counts a single vote for that name.  Method determines how many votes each candidate received in the list.  Method returns the election winner name.
