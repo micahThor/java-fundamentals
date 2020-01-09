@@ -3,6 +3,12 @@
  */
 package basiclibrary;
 
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+
 public class Library {
 
     public int[] roll(int rollAmt) {
@@ -62,6 +68,103 @@ public class Library {
             }
         }
         return inputArrays[lowestAverageArrayIndex];
+    }
+
+    //
+    // LAB 03
+    //
+    public String weatherDataToString(int[][] inputArrays) {
+
+        String result = "";
+
+        // iterate through input array and add temperatures to hashset
+        HashSet<Integer> weatherDataSet = new HashSet<>();
+        for (int[] weekData : inputArrays) {
+
+            for (int dailyData: weekData) {
+                weatherDataSet.add(dailyData);
+            }
+        }
+
+        // deterimine min and max temperatures
+        int minTemp = 100000;
+        int maxTemp = -100000;
+        for (int temperature : weatherDataSet) {
+
+            if (temperature < minTemp) {
+                minTemp = temperature;
+            }
+
+            if (temperature > maxTemp) {
+                maxTemp = temperature;
+            }
+        }
+
+        // determine temperatures not experienced in month data
+        HashSet<Integer> notExperiencedTemperatureSet = new HashSet<>();
+        for (int currentTemp = minTemp; currentTemp < maxTemp; currentTemp++) {
+
+            if (!weatherDataSet.contains(currentTemp)) {
+                notExperiencedTemperatureSet.add(currentTemp);
+            }
+        }
+
+        // turn unused weather data hashset into a sorted array
+        Object[] notExperiencedTemperatureArray = notExperiencedTemperatureSet.toArray();
+        Arrays.sort(notExperiencedTemperatureArray);
+
+        // build result string
+        result += String.format("High: %d\n", maxTemp);
+        result += String.format("Low: %d\n", minTemp);
+        for (Object unexperiencedTemp : notExperiencedTemperatureArray) {
+            result += String.format("Never saw temperature: %d\n", unexperiencedTemp);
+        }
+
+        return result;
+    }
+
+    //
+    // LAB 03
+    //
+    public String tally(List<String> votes) {
+
+        // iterate through input array and add unique names to hashset
+        HashSet<String> candidateNamesSet = new HashSet<>();
+        for (String candidate : votes) {
+            candidateNamesSet.add(candidate);
+        }
+
+        // iterate through hashset of names and add names to hashmap
+        HashMap<String, Integer> candidatesVotesMap = new HashMap<>();
+        for (String name : candidateNamesSet) {
+            candidatesVotesMap.put(name, 0);
+        }
+
+        // iterate through array and add votes to hashmap
+        for (String candidate : votes) {
+            int nextVote = candidatesVotesMap.get(candidate);
+            nextVote++;
+            candidatesVotesMap.put(candidate, nextVote);
+        }
+
+        // iterate through map and determine which candidate has most votes
+        String electionWinner = "";
+        int mostVotes = 0;
+        for (String candidate : candidatesVotesMap.keySet()) {
+
+            int voteResultsForCandidate = candidatesVotesMap.get(candidate);
+
+            if (voteResultsForCandidate > mostVotes) {
+                mostVotes = voteResultsForCandidate;
+                electionWinner = candidate;
+            }
+        }
+
+        String result = String.format("%s received the most votes!", electionWinner);
+
+        return result;
+
+
     }
 
 }
