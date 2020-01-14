@@ -1,8 +1,11 @@
 # LAB 06 - 14 JAN 2019
 
+## Lab Overview 
+This lab is in an introduction to inheritance.  My project does not utilize inheritance as far as a super/sub-class relationship is concerned.  In this project I defined a Restaurant object that contains a list of Review objects.  This relationship is an aggregate relationship in the sense that part of a Restaurant object is comprised of a list of Review objects.
+
 ## Featured Tasks
 
-- Create a **Restaurant** class:
+- **Restaurant** class:
     - Properties:  
       name,  
       price category,  
@@ -16,7 +19,7 @@
       update star ranking,  
       toString
       
-- Create a **Review** class:
+- **Review** class:
     - Properties:  
       reviewMessage,  
       author,  
