@@ -2,13 +2,14 @@
 
 ## Featured Tasks
 
-- Create a Restaurant class:
+- Create a **Restaurant** class:
     - Properties:
       name, 
       price category, 
       star ranking, 
       list of Review
     - Behavior:
+    
       get instance name, price category, star ranking,
       
       get Review from list,
