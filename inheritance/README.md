@@ -14,4 +14,17 @@
       get Review from list,  
       add Review to list,  
       update star ranking,  
-      toString,  
+      toString
+      
+- Create a **Review** class:
+    - Properties:  
+      reviewMessage,  
+      author,  
+      numOfStars  
+      
+    - Behavior:  
+      get review message,  
+      get author,  
+      get number of stars,  
+      set number of stars,  
+      toString
