@@ -9,8 +9,12 @@
       star ranking, 
       list of Review
     - Behavior:
-      get instance name, price category, star ranking
-      get Review from list
-      add Review to list
-      update star ranking
-      toString
+      get instance name, price category, star ranking,
+      
+      get Review from list,
+      
+      add Review to list,
+      
+      update star ranking,
+      
+      toString,
