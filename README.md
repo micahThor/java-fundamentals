@@ -13,4 +13,4 @@
   [Lab 03 repo : Linter App](https://github.com/micahThor/java-fundamentals/tree/master/linter)
   
 - ### LAB 06 / LAB 07 - JAN 14
-  [Lab 06/ Lab 07 repo : Inheritance Restaurant and Reviews](https://github.com/micahThor/java-fundamentals/tree/master/inheritance)
+  [Lab 06 / Lab 07 repo : Inheritance Restaurant and Reviews](https://github.com/micahThor/java-fundamentals/tree/master/inheritance)
