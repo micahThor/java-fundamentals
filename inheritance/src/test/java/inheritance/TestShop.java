@@ -4,13 +4,13 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class TestRestaurant {
+public class TestShop {
 
-    Restaurant tacoBell;
+    Shop tacoBell;
 
     @Before public void initialize() {
 
-        tacoBell = new Restaurant("Taco Bell", 2);
+        tacoBell = new Shop("Taco Bell");
 
         Review tBellReview1 = new Review("This place was terribly...GOOD!", "John Doe", 5);
         Review tBellReview2 = new Review("Found a roach in my food.", "Jessica Tomato", 1);
@@ -27,7 +27,7 @@ public class TestRestaurant {
         tacoBell.addReview(tBellReview6);
     }
 
-    @Test public void restaurant_testGetShopName() {
+    @Test public void shop_testGetShopName() {
 
         String expected = "Taco Bell";
         String actual = tacoBell.getShopName();
@@ -35,15 +35,7 @@ public class TestRestaurant {
         assertEquals(expected, actual);
     }
 
-    @Test public void restaurant_testGetRestaurantPriceCategory() {
-
-        int expected = 2;
-        int actual = tacoBell.getPriceCategory();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test public void restaurant_testGetStarRanking() {
+    @Test public void shop_testGetStarRanking() {
 
         double expected = 2.833;
         double actual = tacoBell.getStarRanking();
@@ -51,7 +43,7 @@ public class TestRestaurant {
         assertEquals(expected, actual, .001);
     }
 
-    @Test public void restaurant_testUpdateStarRanking() {
+    @Test public void shop_testUpdateStarRanking() {
 
         Review tBellReview7 = new Review("I eat here everyday!", "Mr. T.", 5);
         tacoBell.addReview(tBellReview7);
@@ -62,7 +54,7 @@ public class TestRestaurant {
         assertEquals(expected, actual, .001);
     }
 
-    @Test public void restaurant_testAddReview() {
+    @Test public void shop_testAddReview() {
 
         Review reviewAtThree = tacoBell.getReview(2);
         String expectedMessage1 = "I like to drink nacho cheese.";
@@ -78,20 +70,20 @@ public class TestRestaurant {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void restaurant_testGetReview_IllegalArg_InputValExceedsListSize() {
+    public void shop_testGetReview_IllegalArg_InputValExceedsListSize() {
 
         tacoBell.getReview(tacoBell.getReviewCount() + 1);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void restaurant_testGetReview_IllegalArg_InputValOneLessThanListSize() {
+    public void shop_testGetReview_IllegalArg_InputValOneLessThanListSize() {
 
         tacoBell.getReview(-1);
     }
 
-    @Test public void restaurant_testToString() {
+    @Test public void shop_testToString() {
 
-        String expected = "Name: Taco Bell :: Star Ranking: 2.8 :: Price Category: $$";
+        String expected = "Name: Taco Bell :: Star Ranking: 2.8";
         String actual = tacoBell.toString();
         assertEquals(expected, actual);
     }

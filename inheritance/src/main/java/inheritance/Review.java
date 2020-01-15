@@ -1,17 +1,23 @@
 package inheritance;
 
-
 public class Review {
 
     private String reviewMessage;
     private String author;
     private int numOfStars;
+    private String movieTitle;
 
     public Review(String reviewMessage, String author, int numOfStars) {
 
         this.reviewMessage = reviewMessage;
         this.author = author;
         this.numOfStars = setNumStars(numOfStars);
+    }
+
+    public Review(String reviewMessage, String author, int numOfStars, String movieTitle) {
+
+        this(reviewMessage, author, numOfStars);
+        this.movieTitle = movieTitle;
     }
 
     public String getReviewMessage() {
@@ -24,6 +30,10 @@ public class Review {
 
     public int getNumOfStars() {
         return this.numOfStars;
+    }
+
+    public String getMovieTitle() {
+        return this.movieTitle;
     }
 
     public int setNumStars(int numOfStars) {
@@ -47,6 +57,11 @@ public class Review {
 
         reviewStr.append(" :: Number of Stars: ");
         reviewStr.append(this.numOfStars);
+
+        if (this.movieTitle != null) {
+            reviewStr.append(" :: Movie Reviewed: ");
+            reviewStr.append(this.movieTitle);
+        }
 
         return reviewStr.toString();
     }
